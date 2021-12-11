@@ -1,5 +1,6 @@
-let backgroundColor = "rgb(10, 12, 36)";
-let boxColor = "#ba451a";
+let backgroundColor = "transparent";
+let boxColor = "white";
+let shadowColor = "white"
 
 function gridFunction(size) {
   let grid = document.getElementById("grid");
@@ -16,7 +17,7 @@ function gridFunction(size) {
       box.style.padding = "0px";
       box.style.height = "10px";
       box.style.width = "10px";
-      box.style.background = "rgb(10, 12, 36)";
+      box.style.background = backgroundColor;
       box.style.boxShadow = "";
       box.style.borderRadius = "10px"
       if (Math.random() > 0.94) {
@@ -56,10 +57,11 @@ function run() {
       count = neighborCount(grid, x, y);
       if (currentBox.style.background == boxColor && (count < 2 || count > 3)){
         currentBox.style.background = backgroundColor;
+        currentBox.style.boxShadow = "";
       }
       else if (currentBox.style.background == backgroundColor && count == 3) {
         currentBox.style.background = boxColor;
-        currentBox.style.boxShadow = "0px 0px 30px gold";
+        currentBox.style.boxShadow = "0px 0px 15px gold";
       }
     }
   }
