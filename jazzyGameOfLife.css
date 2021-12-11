@@ -1,0 +1,26 @@
+/* #grid {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+} */
+ */
+  body {
+    overflow: hidden;
+    height: 20;
+  }
+  button {
+    background: rgb(47, 187, 94);
+    font-family: arcade;
+    font-size: 20px;
+    color: rgb(70, 50, 189);
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    
+  }
+  @font-face{
+    font-family: "arcade";
+    src: url("ARCADECLASSIC.TTF") format("truetype");
+  }
