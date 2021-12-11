@@ -2,9 +2,11 @@ let backgroundColor = "transparent";
 let boxColor = "white";
 let shadowColor = "white"
 
+ let buttonHolder = document.getElementById("buttonHolder")
+
 function gridFunction(size) {
+  buttonHolder.style.width = size * 10 + "px";
   let grid = document.getElementById("grid");
-  grid.style.border = "3px solid red"
   grid.style.width = size * 10 + "px";
   for (let i = 0; i < size; i++) {
     let row = document.createElement("div");
@@ -22,15 +24,12 @@ function gridFunction(size) {
       box.style.boxShadow = "";
       box.style.borderRadius = "10px"
       if (Math.random() > 0.94) {
-        console.log("yes")
-        console.log(box.height)
         box.style.background = boxColor;
         box.style.boxShadow = "0px 0px 15px #9CF014";
       }
       row.appendChild(box);
     }
   }
-  console.log(grid)
   return grid;
 }
 
@@ -76,7 +75,7 @@ document.querySelector("#autoRunButton").addEventListener("click", () => {
     clearInterval(running);
     running = false;
   } else {
-    running = setInterval(run, 100);
+    running = setInterval(run, 130);
   }
 })
 
