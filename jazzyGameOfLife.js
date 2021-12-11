@@ -24,6 +24,7 @@ function gridFunction(size) {
         console.log("yes")
         console.log(box.height)
         box.style.background = boxColor;
+        box.style.boxShadow = "0px 0px 15px #9CF014";
       }
       row.appendChild(box);
     }
@@ -61,7 +62,7 @@ function run() {
       }
       else if (currentBox.style.background == backgroundColor && count == 3) {
         currentBox.style.background = boxColor;
-        currentBox.style.boxShadow = "0px 0px 15px gold";
+        currentBox.style.boxShadow = "0px 0px 15px #9CF014";
       }
     }
   }
