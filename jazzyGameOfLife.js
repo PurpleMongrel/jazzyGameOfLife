@@ -1,3 +1,6 @@
+let backgroundColor = "rgb(10, 12, 36)";
+let boxColor = "#ba451a";
+
 function gridFunction(size) {
   let grid = document.getElementById("grid");
 
@@ -13,12 +16,13 @@ function gridFunction(size) {
       box.style.padding = "0px";
       box.style.height = "10px";
       box.style.width = "10px";
-      box.style.background = "black";
+      box.style.background = "rgb(10, 12, 36)";
+      box.style.boxShadow = "";
       box.style.borderRadius = "10px"
       if (Math.random() > 0.94) {
         console.log("yes")
         console.log(box.height)
-        box.style.background = "teal";
+        box.style.background = boxColor;
       }
       row.appendChild(box);
     }
@@ -34,7 +38,7 @@ function neighborCount(grid, xx, yy) {
       if (x != xx || y != yy) {
         if (grid.childNodes[y] != null) {
           if (grid.childNodes[y].childNodes[x] != null) {
-            if (grid.childNodes[y].childNodes[x].style.background == "teal") count++;
+            if (grid.childNodes[y].childNodes[x].style.background == boxColor) count++;
 
           }
         }
@@ -50,9 +54,13 @@ function run() {
     for (let x = 0; x < grid.childNodes[y].childNodes.length; x++) {
       let currentBox = grid.childNodes[y].childNodes[x];
       count = neighborCount(grid, x, y);
-      if (currentBox.style.background == "teal" && (count < 2 || count > 3))
-        currentBox.style.background = "black";
-      else if (currentBox.style.background == "black" && count == 3) currentBox.style.background = "teal";
+      if (currentBox.style.background == boxColor && (count < 2 || count > 3)){
+        currentBox.style.background = backgroundColor;
+      }
+      else if (currentBox.style.background == backgroundColor && count == 3) {
+        currentBox.style.background = boxColor;
+        currentBox.style.boxShadow = "0px 0px 30px gold";
+      }
     }
   }
 }
