@@ -1,6 +1,6 @@
-
 function gridFunction(size) {
-  grid = document.getElementById("grid");
+  let grid = document.getElementById("grid");
+
   for (let i = 0; i < size; i++) {
     let row = document.createElement("div");
     row.style.display = "flex"
@@ -11,17 +11,19 @@ function gridFunction(size) {
       let box = document.createElement("p");
       box.style.margin = "0px";
       box.style.padding = "0px";
-      box.style.height = 10;
-      box.style.width = 10;
+      box.style.height = "10px";
+      box.style.width = "10px";
       box.style.background = "black";
       box.style.borderRadius = "10px"
       if (Math.random() > 0.94) {
+        console.log("yes")
+        console.log(box.height)
         box.style.background = "teal";
-
       }
       row.appendChild(box);
     }
   }
+  console.log(grid)
   return grid;
 }
 
@@ -55,38 +57,25 @@ function run() {
   }
 }
 
-let runListener = function () {
   document.querySelector("#runButton").addEventListener("click", () => { run() })
-}
 
-let autoRunListener = function () {
-  document.querySelector("#autoRunButton").addEventListener("click", () => {
-    if (running) {
-      clearInterval(running);
-      running = false;
-    } else {
-      running = setInterval(run, 100);
-    }
-  })
-}
+document.querySelector("#autoRunButton").addEventListener("click", () => {
+  if (running) {
+    clearInterval(running);
+    running = false;
+  } else {
+    running = setInterval(run, 100);
+  }
+})
 
-let restartListener = function () {
-  document.querySelector("#restartButton").addEventListener("click", () => {
-    window.location.reload();
-  });
-}
+document.querySelector("#restartButton").addEventListener("click", () => {
+  window.location.reload();
+});
 
-let grid;
+let running = false;
 
-function runGameOfLife() {
-  console.log(document.body)
-  console.log("yo")
-  gridFunction(70);
-  runListener();
-  running = false;
-  autoRunListener();
-  restartListener();
-  run()
+runGameOfLife = function () {
+  let grid = gridFunction(70);
 }
 
 
