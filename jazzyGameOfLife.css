@@ -9,17 +9,40 @@
     overflow: hidden;
     height: 20;
   }
+
   button {
-    background: rgb(47, 187, 94);
+    background: rgb(5, 5, 5);
     font-family: arcade;
-    font-size: 20px;
-    color: rgb(70, 50, 189);
-    align-items: center;
+    font-size: 30px;
+    color: rgb(215, 218, 58);
+    /* align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 30px;
+    margin-left: 30px; */
+    border: 3px solid rgb(10, 40, 138);
+    border-radius: 2px;
+    }
+
+  #buttonHolder {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    border: 3px solid rgb(10, 40, 138);
+    align-content: center;
     
+
+
   }
+
+  #grid {
+    border: 3px solid rgb(216, 51, 29);
+    border-radius: 2px;;
+  }
+
   @font-face{
     font-family: "arcade";
     src: url("ARCADECLASSIC.TTF") format("truetype");
