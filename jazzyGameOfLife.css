@@ -15,12 +15,14 @@
     font-family: arcade;
     font-size: 30px;
     color: rgb(215, 218, 58);
-    /* align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 30px; */
     border: 3px solid rgb(10, 40, 138);
     border-radius: 2px;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 80%;
+    padding-bottom: 0px;
+    text-align: center;
+    
     }
 
   #buttonHolder {
@@ -30,17 +32,20 @@
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    display: block;
-    border: 3px solid rgb(10, 40, 138);
-    align-content: center;
+    display: flex;
+   /*  border: 3px solid rgb(10, 40, 138); */
     
-
-
+    
   }
 
   #grid {
     border: 3px solid rgb(216, 51, 29);
-    border-radius: 2px;;
+    border-radius: 2px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   @font-face{
