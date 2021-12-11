@@ -4,7 +4,8 @@ let shadowColor = "white"
 
 function gridFunction(size) {
   let grid = document.getElementById("grid");
-
+  grid.style.border = "3px solid red"
+  grid.style.width = size * 10 + "px";
   for (let i = 0; i < size; i++) {
     let row = document.createElement("div");
     row.style.display = "flex"
@@ -56,7 +57,7 @@ function run() {
     for (let x = 0; x < grid.childNodes[y].childNodes.length; x++) {
       let currentBox = grid.childNodes[y].childNodes[x];
       count = neighborCount(grid, x, y);
-      if (currentBox.style.background == boxColor && (count < 2 || count > 3)){
+      if (currentBox.style.background == boxColor && (count < 2 || count > 3)) {
         currentBox.style.background = backgroundColor;
         currentBox.style.boxShadow = "";
       }
@@ -68,7 +69,7 @@ function run() {
   }
 }
 
-  document.querySelector("#runButton").addEventListener("click", () => { run() })
+document.querySelector("#runButton").addEventListener("click", () => { run() })
 
 document.querySelector("#autoRunButton").addEventListener("click", () => {
   if (running) {
