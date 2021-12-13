@@ -1,6 +1,6 @@
 let backgroundColor = "transparent";
 let boxColor = "white";
-let shadowColor = "white"
+let shadowColor = "#9CF014"
 
 let buttonHolder = document.getElementById("buttonHolder")
 
@@ -25,7 +25,7 @@ function gridFunction(size) {
       cell.style.borderRadius = "10px"
       if (Math.random() > 0.94) {
         cell.style.background = boxColor;
-        cell.style.boxShadow = "0px 0px 15px #9CF014";
+        cell.style.boxShadow = "0px 0px 15px " + shadowColor;
       }
       row.appendChild(cell);
     }
@@ -61,7 +61,7 @@ function run() {
       }
       else if (currentCell.style.background == backgroundColor && count == 3) {
         currentCell.style.background = boxColor;
-        currentCell.style.boxShadow = "0px 0px 15px #9CF014";
+        currentCell.style.boxShadow = "0px 0px 15px " + shadowColor;
       }
     }
   }
@@ -92,8 +92,10 @@ function cellClickListener(cells) {
     cell.addEventListener("click", () => {
       if (cell.style.background == boxColor) {
         cell.style.background = backgroundColor;
+        cell.style.boxShadow = "";
       } else {
         cell.style.background = boxColor;
+        cell.style.boxShadow = "0px 0px 15px " + shadowColor;
       }
     })
   }
