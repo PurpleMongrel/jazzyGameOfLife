@@ -79,6 +79,18 @@ document.querySelector("#autoRunButton").addEventListener("click", () => {
   }
 })
 
+let cells = document.getElementsByTagName("p");
+
+for (let cell in cells) {
+  cell.addEventListener("click", () => {
+    if (cell.style.background == boxColor) {
+      cell.style.background = backgroundColor;
+    } else {
+      cell.style.background = boxColor;
+    }
+  })
+}
+
 document.querySelector("#restartButton").addEventListener("click", () => {
   window.location.reload();
 });
