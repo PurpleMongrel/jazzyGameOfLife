@@ -79,6 +79,7 @@ document.querySelector("#autoRunButton").addEventListener("click", () => {
   }
 })
 
+<<<<<<< HEAD
 function cells() {
 let cellElements = document.querySelectorAll("p");
 return cellElements
@@ -89,6 +90,10 @@ return cellElements
 //for (let x of cells) {console.log(x)}
 
 function cellClickListener (cells) {
+=======
+let cells = document.getElementsByTagName("p");
+
+>>>>>>> 34a6847881817fa3df6919e44884a8784ca50fa0
 for (let cell in cells) {
   cell.addEventListener("click", () => {
     if (cell.style.background == boxColor) {
@@ -98,7 +103,10 @@ for (let cell in cells) {
     }
   })
 }
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 34a6847881817fa3df6919e44884a8784ca50fa0
 
 document.querySelector("#restartButton").addEventListener("click", () => {
   window.location.reload();
