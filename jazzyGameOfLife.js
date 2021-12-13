@@ -15,19 +15,19 @@ function gridFunction(size) {
     row.style.padding = "0px";
     grid.appendChild(row);
     for (let j = 0; j < size; j++) {
-      let box = document.createElement("p");
-      box.style.margin = "0px";
-      box.style.padding = "0px";
-      box.style.height = "10px";
-      box.style.width = "10px";
-      box.style.background = backgroundColor;
-      box.style.boxShadow = "";
-      box.style.borderRadius = "10px"
+      let cell = document.createElement("p");
+      cell.style.margin = "0px";
+      cell.style.padding = "0px";
+      cell.style.height = "10px";
+      cell.style.width = "10px";
+      cell.style.background = backgroundColor;
+      cell.style.boxShadow = "";
+      cell.style.borderRadius = "10px"
       if (Math.random() > 0.94) {
-        box.style.background = boxColor;
-        box.style.boxShadow = "0px 0px 15px #9CF014";
+        cell.style.background = boxColor;
+        cell.style.boxShadow = "0px 0px 15px #9CF014";
       }
-      row.appendChild(box);
+      row.appendChild(cell);
     }
   }
   return grid;
@@ -53,15 +53,15 @@ function neighborCount(grid, xx, yy) {
 function run() {
   for (let y = 0; y < grid.childNodes.length; y++) {
     for (let x = 0; x < grid.childNodes[y].childNodes.length; x++) {
-      let currentBox = grid.childNodes[y].childNodes[x];
+      let currentCell = grid.childNodes[y].childNodes[x];
       count = neighborCount(grid, x, y);
-      if (currentBox.style.background == boxColor && (count < 2 || count > 3)) {
-        currentBox.style.background = backgroundColor;
-        currentBox.style.boxShadow = "";
+      if (currentCell.style.background == boxColor && (count < 2 || count > 3)) {
+        currentCell.style.background = backgroundColor;
+        currentCell.style.boxShadow = "";
       }
-      else if (currentBox.style.background == backgroundColor && count == 3) {
-        currentBox.style.background = boxColor;
-        currentBox.style.boxShadow = "0px 0px 15px #9CF014";
+      else if (currentCell.style.background == backgroundColor && count == 3) {
+        currentCell.style.background = boxColor;
+        currentCell.style.boxShadow = "0px 0px 15px #9CF014";
       }
     }
   }
