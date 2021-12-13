@@ -2,7 +2,7 @@ let backgroundColor = "transparent";
 let boxColor = "white";
 let shadowColor = "white"
 
- let buttonHolder = document.getElementById("buttonHolder")
+let buttonHolder = document.getElementById("buttonHolder")
 
 function gridFunction(size) {
   buttonHolder.style.width = size * 10 + "px";
@@ -41,15 +41,14 @@ function neighborCount(grid, xx, yy) {
         if (grid.childNodes[y] != null) {
           if (grid.childNodes[y].childNodes[x] != null) {
             if (grid.childNodes[y].childNodes[x].style.background == boxColor) count++;
-
           }
         }
       }
     }
   }
-
   return count;
 }
+
 
 function run() {
   for (let y = 0; y < grid.childNodes.length; y++) {
@@ -68,7 +67,9 @@ function run() {
   }
 }
 
+
 document.querySelector("#runButton").addEventListener("click", () => { run() })
+
 
 document.querySelector("#autoRunButton").addEventListener("click", () => {
   if (running) {
@@ -79,40 +80,33 @@ document.querySelector("#autoRunButton").addEventListener("click", () => {
   }
 })
 
-<<<<<<< HEAD
+
 function cells() {
-let cellElements = document.querySelectorAll("p");
-return cellElements
+  let cellElements = document.querySelectorAll("p");
+  return cellElements
 }
 
 
-
-//for (let x of cells) {console.log(x)}
-
-function cellClickListener (cells) {
-=======
-let cells = document.getElementsByTagName("p");
-
->>>>>>> 34a6847881817fa3df6919e44884a8784ca50fa0
-for (let cell in cells) {
-  cell.addEventListener("click", () => {
-    if (cell.style.background == boxColor) {
-      cell.style.background = backgroundColor;
-    } else {
-      cell.style.background = boxColor;
-    }
-  })
+function cellClickListener(cells) {
+  for (let cell of cells) {
+    cell.addEventListener("click", () => {
+      if (cell.style.background == boxColor) {
+        cell.style.background = backgroundColor;
+      } else {
+        cell.style.background = boxColor;
+      }
+    })
+  }
 }
-<<<<<<< HEAD
-}
-=======
->>>>>>> 34a6847881817fa3df6919e44884a8784ca50fa0
+
 
 document.querySelector("#restartButton").addEventListener("click", () => {
   window.location.reload();
 });
 
+
 let running = false;
+
 
 runGameOfLife = function () {
   let grid = gridFunction(70);
