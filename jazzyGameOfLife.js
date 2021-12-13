@@ -79,8 +79,16 @@ document.querySelector("#autoRunButton").addEventListener("click", () => {
   }
 })
 
-let cells = document.getElementsByTagName("p");
+function cells() {
+let cellElements = document.querySelectorAll("p");
+return cellElements
+}
 
+
+
+//for (let x of cells) {console.log(x)}
+
+function cellClickListener (cells) {
 for (let cell in cells) {
   cell.addEventListener("click", () => {
     if (cell.style.background == boxColor) {
@@ -89,6 +97,7 @@ for (let cell in cells) {
       cell.style.background = boxColor;
     }
   })
+}
 }
 
 document.querySelector("#restartButton").addEventListener("click", () => {
@@ -99,6 +108,8 @@ let running = false;
 
 runGameOfLife = function () {
   let grid = gridFunction(70);
+  let cellList = cells()
+  cellClickListener(cellList)
 }
 
 
