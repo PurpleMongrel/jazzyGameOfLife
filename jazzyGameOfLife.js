@@ -67,20 +67,6 @@ function run() {
   }
 }
 
-
-document.querySelector("#runButton").addEventListener("click", () => { run() })
-
-
-document.querySelector("#autoRunButton").addEventListener("click", () => {
-  if (running) {
-    clearInterval(running);
-    running = false;
-  } else {
-    running = setInterval(run, 130);
-  }
-})
-
-
 function cells() {
   let cellElements = document.querySelectorAll("p");
   return cellElements
@@ -102,9 +88,31 @@ function cellClickListener(cells) {
 }
 
 
+document.querySelector("#runButton").addEventListener("click", () => { run() })
+
+
+document.querySelector("#autoRunButton").addEventListener("click", () => {
+  if (running) {
+    clearInterval(running);
+    running = false;
+  } else {
+    running = setInterval(run, 130);
+  }
+})
+
 document.querySelector("#restartButton").addEventListener("click", () => {
   window.location.reload();
 });
+
+document.querySelector("#clearButton").addEventListener("click", () => {
+  let cellElements = cells();
+  for (let cell of cellElements) {
+    cell.style.background = backgroundColor;
+    cell.style.boxShadow = "";
+  }
+})
+
+
 
 
 let running = false;
