@@ -32,7 +32,7 @@ function gridFunction(size) {
   }
   return grid;
 }
-
+//
 function neighborCount(grid, xx, yy) {
   let count = 0;
   for (let y = yy - 1; y <= yy + 1; y++) {
