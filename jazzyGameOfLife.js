@@ -23,7 +23,7 @@ function gridFunction(size) {
       cell.style.background = backgroundColor;
       cell.style.boxShadow = "";
       cell.style.borderRadius = "10px"
-      if (Math.random() > 0.94) {
+      if (Math.random() > 0.90) {
         cell.style.background = boxColor;
         cell.style.boxShadow = "0px 0px 15px " + shadowColor;
       }

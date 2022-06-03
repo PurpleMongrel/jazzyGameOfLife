@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <head></head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="jazzyGameOfLife.css">
 
 <body style="background:rgb(0, 0, 0)" style="overflow:hidden">
-  <div id="buttonHolder">
-    <button class="button" id="runButton">RUN</button>
-    <button class="button" id="autoRunButton">AUTO</button>
-    <button class="button" id="restartButton">RESET</button>
-    <button class="button" id="clearButton">CLEAR</button>
-  </div>
   
-  <div id="grid"></div>
-  <script src="jazzyGameOfLife.js"></script>
-  <script>runGameOfLife();</script>
+  <!-- <header class="header">
+  <h1 class="header__title">Jazzy Game of Life</h1>
+  <div id="jazzyGameOfLife_container">
+  </header> -->
+
+ //Container with game game and caption
+<div class="gameAndCaptionContainer" >
+    <div>
+      <div id="buttonHolder">
+        <button class="button" id="runButton">RUN</button>
+        <button class="button" id="autoRunButton">AUTO</button>
+        <button class="button" id="restartButton">RESET</button>
+        <button class="button" id="clearButton">CLEAR</button>
+      </div>
+
+      <div id="grid"></div>
+      <script src="jazzyGameOfLife.js"></script>
+      <script>runGameOfLife();</script>
+    </div>
+
+    <figcaption class="jazzyGameofLife__caption">
+      <h1 id="jazzyGameOfLife-title">Jazzy Game of Life</h1>
+      <br>Conway's cellular automaton never loses its charm, which is why I chose it as a theme in this DOM/HTML
+      project.
+      <br><br>
+      RESET initial seed pattern, though user may also click individual DOM element boxes (displayed as circles)
+      turn cells on or off.
+      <br><br>
+      RUN steps through one generation per click.
+      <br><br>
+      AUTO starts/stops looping though generations automatically.
+      <br><br>
+      Future changes:
+      <br>
+      - Improving performance by using requestAnimationFrame rather than setInterval.
+      <br>
+      - Allowing user set the density of live cells in the intial seed patterns.
+      <br>
+      - Make individual cell click accurate.
+    </figcaption>
+  </div>
+
 
 </body>
